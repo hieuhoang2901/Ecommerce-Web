@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-
-
+// import HomePage from './pages/user/HomePage';
+import {BrowserRouter} from 'react-router-dom';
+import RouterCustom from './router';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <h1>BKU-SHOP</h1>
+  <BrowserRouter> 
+    <RouterCustom/>
+  </BrowserRouter>
 );
 
 
