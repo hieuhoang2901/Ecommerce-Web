@@ -1,22 +1,65 @@
 @use "sass:map";
-
+@import "styles/pages/theme";
 
 .header__top {
     background:#f5f5f5;
 }
-.header__top_right {
-    display: grid;
-    justify-content: end;
-    align-items: center;
+.header__top_left {
     ul {
+    display:flex;
+    align-items: center;
+    list-style: none;
+    padding:10px 0 13px;
+    column-gap: 20px;
+    li {
+        font-size: 14px;
+        color:map.get($theme_colors, "normal-text");
         display: flex;
-        column-gap: 10px;
-        list-style: none;
-
-        a {
-            font-size: 14px;
-            display: inline-block;
-
+        align-items: center;
+        column-gap: 2px;
+    }
+    li:first-child {
+        position: relative;
+        &:after {
+            position: absolute;
+            right:-10px;
+            top:1px;
+            height:20px;
+            width:1px;
+            background: #000000;
+            opacity: 0.1;
+            content: "";
         }
     }
+}
+}
+.header__top_right {
+    display: grid;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 0 13px;
+    ul 
+    {
+        display: flex;
+        column-gap: 5px;
+        list-style: none;
+
+        a 
+        {
+            font-size: 14px;
+            display: inline-block;
+            color:map.get($theme_colors, "normal-text");
+        }
+        li:last-child  
+        {
+            cursor: pointer;
+            margin-left: 10px;
+            span 
+            {
+                font-size: l4px;
+                margin-left: 2px;
+            }
+        }
+    }
+    
 }
