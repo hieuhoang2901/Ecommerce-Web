@@ -1,9 +1,29 @@
-import {memo} from 'react';
+import {memo,useState} from 'react';
 import "./style.scss";
-import { AiOutlineFacebook, AiOutlineGlobal, AiOutlineInstagram, AiOutlineLinkedin,AiOutlineUser,AiOutlineMail } from "react-icons/ai";
+import { AiOutlineFacebook, AiOutlineGlobal, AiOutlineInstagram, AiOutlineLinkedin,AiOutlineUser,AiOutlineMail,AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { formatPrice } from "utils/formater"
+import { ROUTERS } from 'utils/router';
+
+
+
+
 const Header = () => {
+    const [menus,setMenus] = useState([
+        {
+            name: "HOME",
+            path:ROUTERS.USER.HOME,
+        },
+        {
+            name: "CONTACT",
+            path:ROUTERS.USER.CONTACT,
+        },
+        {
+            name: "ABOUT",
+            path:ROUTERS.USER.ABOUT,
+        }
+        
+    ])
     return (
     <div>
         <div className="header__top">
@@ -59,13 +79,39 @@ const Header = () => {
         <div className="container">
             <div className="row">
                 <div className="col-xl-3">
-                    LOGO
+                    <div className="header__logo">
+                        <h1>BKU-SHOP</h1>
+                    </div>
                 </div>
                 <div className="col-xl-6">
-                    MENU
+                    <div className="header__menu">
+                        <ul>
+                            {
+                                menus?.map((menu,index) => (
+                                    <li key={index} className={index===0 ? "active":""}>
+                                        <Link to={menu?.path}>
+                                            {menu?.name}
+                                        </Link>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
                 </div>
                 <div className="col-xl-3">
-                    PHONE
+                    <div className="header__cart">
+                        <div className="header__price__cart">
+                        <span>{formatPrice(1000000)}</span>
+                        </div>
+                        <ul>
+                            <li>
+                                <Link to={""}>
+                                <AiOutlineShoppingCart />
+                                <span>5</span>
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
