@@ -1,15 +1,24 @@
 import {memo,useState} from 'react';
 import "./style.scss";
-import { AiOutlineFacebook, AiOutlineGlobal, AiOutlineInstagram, AiOutlineLinkedin,AiOutlineUser,AiOutlineMail,AiOutlineShoppingCart } from "react-icons/ai";
+import { 
+    AiOutlineFacebook, 
+    AiOutlineGlobal, 
+    AiOutlineInstagram, 
+    AiOutlineLinkedin,
+    AiOutlineUser,
+    AiOutlineMail,
+    AiOutlineShoppingCart,
+    AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { formatPrice } from "utils/formater"
-import { ROUTERS } from 'utils/router';
+import { ROUTERS } from "utils/router";
 
 
 
 
 const Header = () => {
-    const [menus,setMenus] = useState([
+    const [isShowCategories,setShowCategories] = useState(true)
+    const [menus] = useState([
         {
             name: "HOME",
             path:ROUTERS.USER.HOME,
@@ -80,7 +89,7 @@ const Header = () => {
             <div className="row">
                 <div className="col-xl-3">
                     <div className="header__logo">
-                        <h1>BKU-SHOP</h1>
+                            <h1>BKU-SHOP</h1>
                     </div>
                 </div>
                 <div className="col-xl-6">
@@ -113,6 +122,70 @@ const Header = () => {
                         </ul>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div className="container">
+            <div className="row categories__container">
+                <div className="col-lg-3 categories">
+                    <div className="sub__categories" onClick={() => setShowCategories(!isShowCategories)}>
+                        <AiOutlineMenu/>
+                        Danh sách sản phẩm
+                    </div>
+                    {isShowCategories && 
+                    <ul className={isShowCategories ? "" : "hidden"}>
+                    <li>
+                        <Link to={"#"}>
+                            Cate 1
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={"#"}>
+                            Cate 2
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={"#"}>
+                            Cate 3
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={"#"}>
+                            Cate 4
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={"#"}>
+                            Cate 5
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={"#"}>
+                            Cate 6
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={"#"}>
+                            Cate 7
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={"#"}>
+                            Cate 8
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={"#"}>
+                            Cate 9
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={"#"}>
+                            Cate 10
+                        </Link>
+                    </li>
+                </ul>}
+                </div>
+                <div className="col-lg-9">Phai</div>
             </div>
         </div>
     </div>
