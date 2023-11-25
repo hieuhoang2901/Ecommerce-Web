@@ -9,8 +9,7 @@ import {
     AiOutlineMail,
     AiOutlineShoppingCart,
     AiOutlineMenu,
-    AiOutlinePhone,
-    AiOutlineApple} from "react-icons/ai";
+    AiOutlinePhone} from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { formatPrice } from "utils/formater"
 import { ROUTERS } from "utils/router";
@@ -22,17 +21,27 @@ const Header = () => {
     const [isShowCategories,setShowCategories] = useState(true)
     const [menus] = useState([
         {
-            name: "HOME",
+            name: "TRANG CHỦ",
             path:ROUTERS.USER.HOME,
         },
         {
-            name: "CONTACT",
+            name: "SẢN PHẨM",
+            path:ROUTERS.USER.PRODUCT,
+        },
+        {
+            name: "LIÊN HỆ",
             path:ROUTERS.USER.CONTACT,
         },
         {
-            name: "ABOUT",
+            name: "GIỚI THIỆU",
             path:ROUTERS.USER.ABOUT,
         }
+        ,
+        {
+            name: "BÀI VIẾT",
+            path:ROUTERS.USER.BLOG,
+        }
+        
         
     ])
     return (
