@@ -146,52 +146,42 @@ const Header = () => {
                     <ul className={isShowCategories ? "" : "hidden"}>
                     <li>
                         <Link to={"#"}>
-                            Cate 1
+                            Tất cả
                         </Link>
                     </li>
                     <li>
                         <Link to={"#"}>
-                            Cate 2
+                            Máy tính xách tay
                         </Link>
                     </li>
                     <li>
                         <Link to={"#"}>
-                            Cate 3
+                            Điện thoại di động
                         </Link>
                     </li>
                     <li>
                         <Link to={"#"}>
-                            Cate 4
+                            Thiết bị âm thanh
                         </Link>
                     </li>
                     <li>
                         <Link to={"#"}>
-                            Cate 5
+                            Linh kiện máy tính
                         </Link>
                     </li>
                     <li>
                         <Link to={"#"}>
-                            Cate 6
+                            Thiết bị mạng
                         </Link>
                     </li>
                     <li>
                         <Link to={"#"}>
-                            Cate 7
+                            Thiết bị văn phòng
                         </Link>
                     </li>
                     <li>
                         <Link to={"#"}>
-                            Cate 8
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to={"#"}>
-                            Cate 9
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to={"#"}>
-                            Cate 10
+                            Phụ kiện chung
                         </Link>
                     </li>
                 </ul>}
